@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('start_date')->comment('job start date');
-            $table->timestamp('stop_date')->nullable()->comment('ex. job resigned date');
+            $table->string('title', 100)->comment('title');
+            $table->string('first_name', 200)->comment('first name');
+            $table->string('last_name', 200)->comment('last name');
+            $table->timestamp('join_date')->comment('job start date');
+            $table->timestamp('quit_date')->nullable()->comment('ex. job resigned date');
+            $table->smallInteger('status')->default(1)->comment('1: active, 2: resigned, 3: terminated');
             $table->foreignId('user_id');
+            $table->foreignId('job_position_id');
+            $table->timestamp('promotion_date');
             $table->timestamps();
         });
     }
