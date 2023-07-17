@@ -26,7 +26,7 @@ class OrganizationUnitSeeder extends Seeder
         ]);
 
         $company->children()->create([
-            'name' => 'Accounting and Finance',
+            'name' => 'Accounting and Finance Department',
             'short_name' => 'AFD',
             'is_company' => false,
         ]);

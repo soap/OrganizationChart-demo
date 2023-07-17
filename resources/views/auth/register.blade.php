@@ -75,6 +75,22 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="timezone" class="col-md-4 col-form-label text-md-end">{{ __('Time Zone') }}</label>
+
+                            <div class="col-md-6">
+                                <x-select-input id="timezone" class="form-control @error('timezone') is-invalid @enderror" 
+                                name="timezone" :options="$timezones"
+                                    :selected="old('timezone')" :default="$guessedTimezone"
+                                    required />
+                                @error('timezone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

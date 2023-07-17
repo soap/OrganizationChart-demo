@@ -10,7 +10,7 @@ class OrganizationUnit extends Model
 {
     use HasFactory, NodeTrait;
     
-    public function employees()
+    public function empqloyees()
     {
         return $this->belongsToMany(Employee::class, 'employee_has_organization_units', 'organization_unit_id', 'employee_id');
     }
