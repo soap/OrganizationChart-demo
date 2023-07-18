@@ -1,3 +1,4 @@
+[![Laravel](https://github.com/soap/OrganizationChart-demo/actions/workflows/laravel.yml/badge.svg)](https://github.com/soap/OrganizationChart-demo/actions/workflows/laravel.yml)
 
 ## About Organization Chart Demo
 Demonstrate of how to manager employee organization units using Laravel.
