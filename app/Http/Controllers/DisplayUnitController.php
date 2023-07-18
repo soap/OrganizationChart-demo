@@ -18,7 +18,7 @@ class DisplayUnitController extends Controller
         $chidren = $orgUnit->children()->get();
         
         return view(
-            'organization-unit.show',
+            'organization-units.show',
             compact('orgUnit', 'chidren')
         );
     }
