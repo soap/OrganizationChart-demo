@@ -4,8 +4,11 @@
 Demonstrate of how to manager employee organization units using Laravel.
  - Departments or Organization units store as MPTT.
  - Employee can be in more than one unit.
- - Employee role in unit can be Head, Assistant or Member.
+ - Employee role in unit can be Head, Assistant or Member (can be added more).
  - Display organization units as a file/folder view.
+ - Livewire and Bootstrap 5 used for the project. However conversion to TailwindCSS is not hard.
+ - Unit and Employee CRUD is in a plan.
+ - Employee promotion and working experiences are in a plan.
  - Organization display as a tree view is a plan.
 
 ## How to Run
@@ -23,16 +26,16 @@ Demonstrate of how to manager employee organization units using Laravel.
     php artisan db:seed
 ```
 
-Run test using 
+## Tests 
 - all test
 ```
     php artisan test 
 ```
-- specify test suit
+- specify test suit (Feature or Unit)
 ```
     php artisan test --testsuit=Feature
 ```
-- specify class
+- specify test class
 ```
     php artisan test --filter=RegistrationTest
 ```
