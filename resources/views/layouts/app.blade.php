@@ -13,8 +13,14 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!--style-->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 <body>
     <div id="app">
@@ -76,5 +82,6 @@
             @yield('content')
         </main>
     </div>
+    @livewireScripts
 </body>
 </html>

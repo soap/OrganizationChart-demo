@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             OrganizationUnitSeeder::class,
             JobRoleSeeder::class,
             JobPositionSeeder::class,
+            EmployeeSeeder::class,
         ]);
     }
 }

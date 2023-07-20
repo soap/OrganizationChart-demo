@@ -17,10 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/unit/{orgUnit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit.show');
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function() { 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/unit/{orgUnit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit.show');
+    // Route::get('/unit/{orgUnit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit.show');
 });
 
