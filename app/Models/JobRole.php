@@ -12,4 +12,5 @@ class JobRole extends Model
     protected $fillable = [
         'name',        
     ];
+
 }

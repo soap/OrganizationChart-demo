@@ -23,6 +23,12 @@
                                     <td> {{ $unit->short_name }} </td>
                                 </tr>
                                 @endforeach
+                                @foreach($orgUnit->employees as $employee)
+                                <tr>
+                                    <td>{{ $employee->first_name }} {{ $employee->last_name }} ({{ $employee->jobPosition->name }})</td>
+                                    <td>{{ $jobRoles[$employee->pivot->job_role_id] }}</td>
+                                </tr>
+                                @endforeach                                 
                             </table>
                         </div>
                         <div>
