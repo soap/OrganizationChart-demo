@@ -25,7 +25,7 @@
                                 @endforeach
                             </table>
                         </div>
-                        @livewire('search-employee-organization', ['orgUnit' => $orgUnit])
+                        @livewire('organization-employees', ['orgUnit' => $orgUnit])
                     </div>
                 </div>
             </div>

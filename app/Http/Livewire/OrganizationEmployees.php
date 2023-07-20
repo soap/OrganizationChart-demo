@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 use App\Models\OrganizationUnit;
 use App\Models\JobRole;
 
-class SearchEmployeeOrganization extends Component
+class OrganizationEmployees extends Component
 {
     use WithPagination;
     public $searchTerm;
@@ -29,6 +29,6 @@ class SearchEmployeeOrganization extends Component
 
         $jobRoles = JobRole::pluck('name', 'id');
 
-        return view('livewire.search-employee-organization', compact('employees', 'jobRoles'));
+        return view('livewire.organization-employees', compact('employees', 'jobRoles'));
     }
 }
