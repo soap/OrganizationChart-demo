@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OrganizationUnit;
+use App\Models\JobRole;
 use Illuminate\Http\Request;
 
 class DisplayUnitController extends Controller

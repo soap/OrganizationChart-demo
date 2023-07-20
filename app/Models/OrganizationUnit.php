@@ -12,7 +12,13 @@ class OrganizationUnit extends Model
     
     public function employees()
     {
-        return $this->belongsToMany(Employee::class, 'employee_has_organization_units', 'organization_unit_id', 'employee_id');
+        return $this->belongsToMany(Employee::class, 'employee_has_organization_units', 'organization_unit_id', 'employee_id')
+            ->withPivot('start_date', 'job_role_id');
+    }
+
+    public function jobRoles()
+    {
+        return $this->belongsTo(JobRole::class, 'job_role_id');
     }
 
     public function getNavigationLinks()

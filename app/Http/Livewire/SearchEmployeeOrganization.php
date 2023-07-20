@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Employee;
 use Livewire\WithPagination;
 use App\Models\OrganizationUnit;
+use App\Models\JobRole;
 
 class SearchEmployeeOrganization extends Component
 {
@@ -26,6 +27,8 @@ class SearchEmployeeOrganization extends Component
             ->where('first_name', 'like', $searchTerm)
             ->paginate(5);
 
-        return view('livewire.search-employee-organization', compact('employees'));
+        $jobRoles = JobRole::pluck('name', 'id');
+
+        return view('livewire.search-employee-organization', compact('employees', 'jobRoles'));
     }
 }

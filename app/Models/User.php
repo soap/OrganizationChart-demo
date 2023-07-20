@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Http;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -54,5 +54,10 @@ class User extends Authenticatable implements MustVerifyEmail
             return $ip->json('timezone');
         }
         return null;
+    }
+
+    public function getNameAttribute(): string
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }
