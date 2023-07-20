@@ -18,10 +18,10 @@ class DisplayUnitController extends Controller
         }
         $children = $orgUnit->children()->get();
         $breadcrumbs = $orgUnit->getNavigationLinks();
-        $jobRoles = JobRole::pluck('name', 'id');
+
         return view(
             'organization-units.show',
-            compact('orgUnit', 'children', 'breadcrumbs','jobRoles')
+            compact('orgUnit', 'children', 'breadcrumbs')
         );
     }
 }

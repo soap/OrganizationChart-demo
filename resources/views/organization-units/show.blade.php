@@ -9,9 +9,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <div>
@@ -19,21 +19,13 @@
                             <table class="table">
                                 @foreach ($children as $unit)
                                 <tr>
-                                    <td> <a href={{ route('unit.show', $unit->id)}} >{{ $unit->name }} </a></td>
+                                    <td> <a href="{{ route('unit.show', $unit->id)}}"> {{ $unit->name }} </a></td>
                                     <td> {{ $unit->short_name }} </td>
                                 </tr>
                                 @endforeach
-                                @foreach($orgUnit->employees as $employee)
-                                <tr>
-                                    <td>{{ $employee->first_name }} {{ $employee->last_name }} ({{ $employee->jobPosition->name }})</td>
-                                    <td>{{ $jobRoles[$employee->pivot->job_role_id] }}</td>
-                                </tr>
-                                @endforeach                                 
                             </table>
                         </div>
-                        <div>
-                            
-                        </div>
+                        @livewire('search-employee-organization', ['orgUnit' => $orgUnit])
                     </div>
                 </div>
             </div>
