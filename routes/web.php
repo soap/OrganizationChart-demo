@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -14,8 +15,6 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/unit/{orgUnit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit.show');
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -27,6 +26,9 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Route::get('/unit/{orgUnit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit.show');
+    
+    Route::resource('organization-unit', App\Http\Controllers\OrganizationUnitController::class);
+    Route::get('/organization-unit/{orgUnit}/add-child', [App\Http\Controllers\OrganizationUnitController::class, 'addChildren'])->name('organization-unit.add-child');
+    Route::get('/unit/{orgUnit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit.show');
 });
 

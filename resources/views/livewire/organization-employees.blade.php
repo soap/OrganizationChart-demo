@@ -3,9 +3,6 @@
         <div class="col-md-12">
 
             <div class="input-group">
-                <div class="input-group-prepend">
-                    <button class="btn btn-primary" type="button">Add Employee</button>
-                </div>
                 <input type="text" class="form-control" placeholder="Search" wire:model="searchTerm" />
             </div>
 
