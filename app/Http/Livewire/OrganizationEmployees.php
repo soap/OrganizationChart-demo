@@ -14,9 +14,17 @@ class OrganizationEmployees extends Component
     public $searchTerm;
     public $orgUnit;
 
+    public $listeners = ['orgUnitChanged' => 'navigateTo'];
+
     public function mount(OrganizationUnit $orgUnit = null)
     {
         $this->orgUnit = $orgUnit ?? OrganizationUnit::root()->first();
+    }
+
+    public function navigateTo($unitId)
+    {
+        $this->orgUnit = OrganizationUnit::find($unitId);
+        $this->render();
     }
 
     public function render()
