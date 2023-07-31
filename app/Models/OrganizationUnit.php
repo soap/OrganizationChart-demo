@@ -9,6 +9,12 @@ use Kalnoy\Nestedset\NodeTrait;
 class OrganizationUnit extends Model
 {
     use HasFactory, NodeTrait;
+
+    protected $fillable = [
+        'name',
+        'short_name',
+        'is_company'
+    ];
     
     public function employees()
     {

@@ -21,7 +21,7 @@ class UnitBreadcrumbs extends Component
 
     public function render()
     {
-        return view('livewire.unit-breadcrumbs');
+        return view('livewire.organization-units.unit-breadcrumbs');
     }
 
     public function navigateTo($unitId)

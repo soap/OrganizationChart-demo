@@ -37,6 +37,6 @@ class OrganizationEmployees extends Component
 
         $jobRoles = JobRole::pluck('name', 'id');
 
-        return view('livewire.organization-employees', compact('employees', 'jobRoles'));
+        return view('livewire..organization-units.organization-employees', compact('employees', 'jobRoles'));
     }
 }
