@@ -9,6 +9,12 @@ use Kalnoy\Nestedset\NodeTrait;
 class OrganizationUnit extends Model
 {
     use HasFactory, NodeTrait;
+
+    protected $fillable = [
+        'name',
+        'short_name',
+        'is_company'
+    ];
     
     public function employees()
     {
@@ -26,6 +32,7 @@ class OrganizationUnit extends Model
         $nodes = Self::ancestorsAndSelf($this->id);
         $links = collect($nodes)->map(function($node) {
             $obj = new \stdClass();
+            $obj->unit_id = $node->id;
             $obj->title = $node->name;
             $obj->url = route('unit.show', $node->id);
             return $obj;

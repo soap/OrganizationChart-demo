@@ -30,5 +30,6 @@ Route::middleware(['auth'])->group(function() {
     Route::resource('organization-unit', App\Http\Controllers\OrganizationUnitController::class);
     Route::get('/organization-unit/{orgUnit}/add-child', [App\Http\Controllers\OrganizationUnitController::class, 'addChildren'])->name('organization-unit.add-child');
     Route::get('/unit/{orgUnit?}', App\Http\Controllers\DisplayUnitController::class)->name('unit.show');
+    Route::get('/live-unit/{orgUnit?}', App\Http\Controllers\DisplayLiveUnitController::class)->name('unit.liveshow');
 });
 
