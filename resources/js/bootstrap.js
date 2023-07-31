@@ -1,6 +1,4 @@
 // Bootstrap JS framework loaded here
-//import 'bootstrap';
-
 import * as bootstrap from 'bootstrap';
 
 window.bootstrap = bootstrap;
